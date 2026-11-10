@@ -48,6 +48,10 @@ html {
   color-scheme: dark;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 /* Base de la página */
 body {
   margin: 0;
@@ -191,6 +195,35 @@ h1, h2, h3 {
   user-select: none;
 }
 
+/* Texto con párrafos (saltos de línea del editor) */
+.ml, .o {
+  white-space: pre-line;
+}
+
+.fcc {
+  width: 100%;
+}
+
+.fc .lg {
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Imágenes de las tarjetas */
+.ci {
+  display: block;
+  max-width: 100%;
+  max-height: 280px;
+  margin: 10px auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.ci.mini {
+  max-height: 64px;
+  margin: 6px 0 0;
+}
+
 input, textarea, select {
   width: 100%;
   font: inherit;
@@ -214,6 +247,15 @@ textarea {
   gap: 8px;
   flex-wrap: wrap;
   margin: 12px 0;
+}
+
+.rw {
+  align-items: flex-start;
+}
+
+.rw > span {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .row {
@@ -242,8 +284,8 @@ summary {
   display: grid;
   grid-template-columns: 24px 1fr 1fr auto;
   gap: 8px;
-  align-items: center;
-  margin-bottom: 8px;
+  align-items: start;
+  margin-bottom: 12px;
 }
 
 .er::before {
@@ -252,21 +294,56 @@ summary {
   color: var(--mu);
   font-size: 14px;
   text-align: center;
+  padding-top: 12px;
 }
 
-.er input {
+.er textarea {
   min-width: 0;
+  min-height: 44px;
+  resize: none;
+  overflow: hidden;
+}
+
+.side {
+  min-width: 0;
+}
+
+.im {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.th {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.th img {
+  max-height: 44px;
+  max-width: 80px;
+  border-radius: 6px;
+  border: 1px solid var(--bd);
+}
+
+.b.sm {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 @media (max-width: 520px) {
   .er {
     grid-template-columns: 20px 1fr auto;
   }
-  .er .df {
+  .er .ld {
     grid-column: 2;
     grid-row: 2;
   }
-  .er .b {
+  .er > .b {
     grid-column: 3;
     grid-row: 1/3;
   }
